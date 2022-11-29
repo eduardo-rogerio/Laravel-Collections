@@ -6,13 +6,12 @@ class CollectionExample
 {
     public function example()
     {
-        $data = [
-            1,
-            2 => [5,6],
-            3,
-            4,
-            5,
-        ];
-        return collect($data)->count();
+        $data = collect(['Mustang','GT','F150']);
+        return $data
+            ->crossJoin(
+            ['automatic','manual'],
+            ['blue','black','white','yellow','gray'],
+            [2018,2019,2022])
+            ->count();
     }
 }
