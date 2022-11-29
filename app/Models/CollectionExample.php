@@ -6,6 +6,11 @@ class CollectionExample
 {
     public function example()
     {
-        return collect([100,2,3,4])->last();
+        $data = [
+          ['price'=>10000],
+          ['price'=>25000],
+          ['price'=>30000],
+        ];
+        return collect($data)->median('price');
     }
 }
