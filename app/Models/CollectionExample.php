@@ -7,10 +7,8 @@ class CollectionExample
     public function example()
     {
         $data = [
-          [0=>['array1']],
-            [1=>['array2']],
-            [2=>['array3']],
+          1,2,3,4,5,6,7,8
         ];
-        return collect($data)->collapse();
+        return collect($data)->chunk(4)->first();
     }
 }
