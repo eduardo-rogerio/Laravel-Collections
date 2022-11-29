@@ -6,9 +6,10 @@ class CollectionExample
 {
     public function example()
     {
-        $data = [
-          1,2,3,4,5,6,7,8
-        ];
-        return collect($data)->chunk(4)->first();
+        $key = collect(['column1', 'column2']);
+        return $key->combine([
+            ['value1' => 123, 'value3' => 789],
+            ['value2' => 456],
+        ]);
     }
 }
