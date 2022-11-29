@@ -6,8 +6,8 @@ class CollectionExample
 {
     public function example()
     {
-        $data = collect([1,2,3,4,5]);
+        $data = collect([10 => 'apple', 25 => 'banana']);
         return $data
-            ->diff([1,3]);
+            ->diffAssoc([30 => 'pears',20 => 'banana']);
     }
 }
