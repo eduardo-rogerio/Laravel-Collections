@@ -6,7 +6,9 @@ class CollectionExample
 {
     public function example()
     {
-        $data = collect(['value1']);
-        return $data->concat(['value2']);
+        return collect([1,2,3,4,5,6,7,8,90,])
+            ->contains(function ($value, $key){
+                return $value > 10;
+            });
     }
 }
