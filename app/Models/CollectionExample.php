@@ -11,6 +11,6 @@ class CollectionExample
           ['price'=>25000],
           ['price'=>30000],
         ];
-        return collect($data)->median('price');
+        return collect($data)->min('price');
     }
 }
