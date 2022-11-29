@@ -6,12 +6,8 @@ class CollectionExample
 {
     public function example()
     {
-        $data = collect(['Mustang','GT','F150']);
+        $data = collect([1,2,3,4,5]);
         return $data
-            ->crossJoin(
-            ['automatic','manual'],
-            ['blue','black','white','yellow','gray'],
-            [2018,2019,2022])
-            ->count();
+            ->diff([1,3]);
     }
 }
