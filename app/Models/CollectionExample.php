@@ -8,10 +8,8 @@ class CollectionExample
 {
     public function example()
     {
-        return Collection::times(3,function ($value){
-            return User::factory()->make([
-                'name' => "{$value}Cool Name"
-            ]);
-        })->toArray();
+        $key = collect(['product','qty']);
+        return collect(['product' => 'coconuts', 'price' => 10,'qty'=>45])
+            ->only($key);
     }
 }
