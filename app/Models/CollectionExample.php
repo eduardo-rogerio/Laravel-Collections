@@ -8,12 +8,12 @@ class CollectionExample
 {
     public function example()
     {
-        $collection = collect([1,2,3,4,5,6,7,8]);
-        return $collection->chunk(2)
-            ->mapSpread(function ($a,$b){
-                return $a * $b;
-            });
-
-
+        return collect([
+            ['code' => '123VG', 'name' => 'string1'],
+            ['code' => '123-VG', 'name' => 'string2'],
+            ['code' => '123 VG', 'name' => 'string3'],
+        ])->groupBy(function ($element){
+            return str_replace(['-',' '],'',$element['code']);
+        });
     }
 }
