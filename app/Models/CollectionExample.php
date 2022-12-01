@@ -8,8 +8,12 @@ class CollectionExample
 {
     public function example()
     {
-        $key = collect(['product','qty']);
-        return collect(['product' => 'coconuts', 'price' => 10,'qty'=>45])
-            ->only($key);
+        $collection = collect([1,2,3,4,5,6,7,8]);
+        return $collection->chunk(2)
+            ->mapSpread(function ($a,$b){
+                return $a * $b;
+            });
+
+
     }
 }
