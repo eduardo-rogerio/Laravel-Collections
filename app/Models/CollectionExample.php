@@ -8,6 +8,7 @@ class CollectionExample
 {
     public function example()
     {
-        return collect([1,2,3,4])->take(2);
+        return collect(['id','name','email'])
+            ->zip([123,'Bob','bob@email.com']);
     }
 }
