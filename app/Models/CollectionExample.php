@@ -13,8 +13,8 @@ class CollectionExample
             ['apples',20,'Florida'],
             ['coconuts',60,'Texas'],
         ])
-            ->each(function ($value){
-                dump("We have {$value[1]} {$value[0]} in our {$value[2]} store");
+            ->eachSpread(function ($product,$qty,$location){
+                dump("We have {$qty} {$product} in our {$location} store");
             });
     }
 }
