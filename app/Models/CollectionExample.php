@@ -8,8 +8,6 @@ class CollectionExample
 {
     public function example()
     {
-        return collect([1,2,3,4])->first(function ($element){
-            return $element > 2;
-        },1000);
+        return collect([1,2,3,4])->take(2);
     }
 }
